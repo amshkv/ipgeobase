@@ -1,5 +1,7 @@
 # Ipgeobase
 
+[![Ruby](https://github.com/amshkv/ipgeobase/actions/workflows/main.yml/badge.svg)](https://github.com/amshkv/ipgeobase/actions/workflows/main.yml)
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
