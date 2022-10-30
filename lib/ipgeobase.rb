@@ -23,4 +23,6 @@ module Ipgeobase
                  }
                })
   end
+
+  private_class_method :build_url
 end

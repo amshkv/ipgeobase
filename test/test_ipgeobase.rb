@@ -16,10 +16,4 @@ class TestIpgeobase < Minitest::Test
     assert_equal 39.03, ip_meta.lat
     assert_equal -77.5, ip_meta.lon # rubocop:disable Lint/AmbiguousOperator
   end
-
-  def test_build_url
-    builded_url = Ipgeobase.build_url('8.8.8.8').to_s
-    expected_url = 'http://ip-api.com/xml/8.8.8.8?fields=country%2CcountryCode%2Ccity%2Clat%2Clon'
-    assert_equal builded_url, expected_url
-  end
 end
