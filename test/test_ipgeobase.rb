@@ -12,9 +12,9 @@ class TestIpgeobase < Minitest::Test
 
     assert_equal 'Ashburn', ip_meta.city
     assert_equal 'United States', ip_meta.country
-    assert_equal 'US', ip_meta.country_code
-    assert_equal '39.03', ip_meta.lat
-    assert_equal '-77.5', ip_meta.lon
+    assert_equal 'US', ip_meta.countryCode
+    assert_equal 39.03, ip_meta.lat
+    assert_equal -77.5, ip_meta.lon # rubocop:disable Lint/AmbiguousOperator
   end
 
   def test_build_url

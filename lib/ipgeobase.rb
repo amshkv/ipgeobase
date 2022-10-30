@@ -1,15 +1,14 @@
 # frozen_string_literal: true
 
 require_relative 'ipgeobase/version'
+require_relative 'ipgeobase/response_presenter'
 require 'addressable/template'
 require 'net/http'
-require 'happymapper'
-
 module Ipgeobase
   def self.lookup(ip)
     url = build_url(ip)
     response = Net::HTTP.get(url)
-    HappyMapper.parse(response)
+    ResponsePresenter.parse(response)
   end
 
   def self.build_url(ip)
