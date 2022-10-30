@@ -5,3 +5,7 @@ require 'ipgeobase'
 
 require 'minitest/autorun'
 require 'webmock/minitest'
+
+def load_fixture(name)
+  File.read("test/fixtures/#{name}.xml")
+end

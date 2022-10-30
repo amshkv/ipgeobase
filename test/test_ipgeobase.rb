@@ -5,8 +5,9 @@ require 'test_helper'
 class TestIpgeobase < Minitest::Test
   def test_full_data
     url = Ipgeobase.build_url('8.8.8.8')
-    file = File.read('test/fixtures/response.xml')
-    stub_request(:get, url).to_return(body: file)
+    url = 'http://ip-api.com/xml/8.8.8.8?fields=country,countryCode,city,lat,lon'
+    response = load_fixture('response')
+    stub_request(:get, url).to_return(body: response)
 
     ip_meta = Ipgeobase.lookup('8.8.8.8')
 
