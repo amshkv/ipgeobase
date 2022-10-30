@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 require_relative 'ipgeobase/version'
-require_relative 'ipgeobase/response_presenter'
+require_relative 'ipgeobase/ip_meta_data'
 require 'addressable/template'
 require 'net/http'
 module Ipgeobase
   def self.lookup(ip)
     url = build_url(ip)
     response = Net::HTTP.get(url)
-    ResponsePresenter.parse(response)
+    IpMetaData.parse(response)
   end
 
   def self.build_url(ip)
